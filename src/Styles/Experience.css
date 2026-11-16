@@ -1,0 +1,736 @@
+
+/* =====================================
+   EXPERIENCE SECTION
+===================================== */
+
+.experience-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 7% 100px;
+  background: #e7e9ec;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.experience-container {
+  max-width: 1250px;
+  width: 100%;
+  margin: auto;
+}
+
+/* =====================================
+   BACKGROUND GLOW
+===================================== */
+
+.exp-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.exp-glow-left {
+  width: 350px;
+  height: 350px;
+  background: rgba(240, 45, 80, 0.09);
+  left: -150px;
+  top: 15%;
+}
+
+.exp-glow-right {
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.85);
+  right: -180px;
+  bottom: 5%;
+}
+
+/* =====================================
+   HEADER
+===================================== */
+
+.experience-header {
+  max-width: 750px;
+  margin-bottom: 55px;
+}
+
+.exp-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.exp-eyebrow span {
+  width: 38px;
+  height: 2px;
+  background: #f02d50;
+}
+
+.experience-header h2 {
+  font-size: clamp(60px, 8vw, 105px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -6px;
+  color: #171717;
+}
+
+.experience-header h2 span {
+  color: #f02d50;
+}
+
+.experience-header > p {
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #666;
+  margin-top: 25px;
+}
+
+/* =====================================
+   SUMMARY
+===================================== */
+
+.exp-summary {
+  display: flex;
+  align-items: center;
+  gap: 55px;
+  padding: 25px 30px;
+  width: fit-content;
+  max-width: 100%;
+  margin-bottom: 75px;
+
+  background: rgba(255,255,255,.5);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 16px;
+  backdrop-filter: blur(15px);
+}
+
+.exp-summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.exp-summary-number {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #171717;
+}
+
+.exp-summary-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  color: #777;
+}
+
+.exp-summary-divider {
+  width: 1px;
+  height: 55px;
+  background: rgba(0,0,0,.15);
+}
+
+/* =====================================
+   TIMELINE
+===================================== */
+
+.experience-timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+  padding: 10px 0;
+}
+
+/* CENTRAL LINE */
+
+.exp-timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 1px;
+  background: rgba(0,0,0,.15);
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.exp-timeline-line span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: #f02d50;
+  transform-origin: top;
+}
+
+/* TIMELINE ITEM */
+
+.exp-timeline-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* LEFT / RIGHT ALIGNMENT */
+
+.exp-left {
+  justify-content: flex-start;
+  padding-right: 53%;
+}
+
+.exp-right {
+  justify-content: flex-end;
+  padding-left: 53%;
+}
+
+/* TIMELINE DOT */
+
+.exp-timeline-dot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: #e7e9ec;
+  border: 2px solid #f02d50;
+  z-index: 3;
+
+  box-shadow: 0 0 0 7px rgba(240,45,80,.08);
+}
+
+.exp-timeline-dot span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #f02d50;
+  animation: expPulse 2s infinite;
+}
+
+@keyframes expPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(240,45,80,.35);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(240,45,80,0);
+  }
+}
+
+/* =====================================
+   EXPERIENCE CARD
+===================================== */
+
+.exp-card {
+  width: 100%;
+  min-height: 290px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: rgba(255,255,255,.58);
+  border: 1px solid rgba(255,255,255,.95);
+  border-radius: 22px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 12px 35px rgba(0,0,0,.035);
+
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    background .45s ease;
+}
+
+.exp-card:hover {
+  transform: translateY(-9px);
+  background: rgba(255,255,255,.9);
+  border-color: rgba(240, 45, 80, 0.22);
+  box-shadow: 0 25px 50px rgba(0,0,0,.09);
+}
+
+/* CARD TOP */
+
+.exp-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.exp-card-number {
+  font-size: 13px;
+  font-weight: 800;
+  color: #f02d50;
+  letter-spacing: 2px;
+}
+
+.exp-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  background: rgba(40,190,130,.09);
+  border-radius: 50px;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #247b5a;
+}
+
+.exp-status span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #28b982;
+  box-shadow: 0 0 8px rgba(40,185,130,.5);
+  animation: expStatusPulse 2.2s ease-in-out infinite;
+}
+
+@keyframes expStatusPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(40, 185, 130, 0.35);
+  }
+
+  50% {
+    box-shadow: 0 0 0 6px rgba(40, 185, 130, 0);
+  }
+}
+
+/* CARD CONTENT */
+
+.exp-card-content {
+  margin: 30px 0;
+}
+
+.exp-type {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #888;
+}
+
+.exp-card-content h3 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 750;
+  letter-spacing: -1.5px;
+  color: #171717;
+  margin: 14px 0;
+  overflow-wrap: anywhere;
+  transition: color .3s ease;
+}
+
+.exp-card:hover .exp-card-content h3 {
+  color: #f02d50;
+}
+
+.exp-card-content p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #666;
+}
+
+/* CARD BOTTOM */
+
+.exp-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.exp-duration {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.exp-duration-icon {
+  width: 39px;
+  height: 39px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #fce3e9;
+  color: #f02d50;
+  font-size: 18px;
+  transition: .3s ease;
+}
+
+.exp-card:hover .exp-duration-icon {
+  background: #f02d50;
+  color: white;
+  transform: rotate(45deg);
+}
+
+.exp-duration div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.exp-duration small {
+  font-size: 8px;
+  color: #999;
+  letter-spacing: 1.5px;
+}
+
+.exp-duration strong {
+  font-size: 15px;
+  color: #222;
+}
+
+.exp-card-index {
+  font-size: 8px;
+  font-weight: 700;
+  color: #999;
+  letter-spacing: 1px;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.exp-footer {
+  margin-top: 100px;
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(0,0,0,.12);
+}
+
+.exp-footer-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #fce3e9;
+  color: #f02d50;
+  font-size: 25px;
+  animation: expRotate 8s linear infinite;
+}
+
+@keyframes expRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.exp-footer h3 {
+  font-size: clamp(25px, 4vw, 40px);
+  font-weight: 750;
+  letter-spacing: -1.5px;
+  color: #171717;
+}
+
+.exp-footer h3 span {
+  color: #f02d50;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.exp-footer p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #777;
+  margin-top: 14px;
+}
+
+/* =====================================
+   LAPTOP
+===================================== */
+
+@media (max-width: 1000px) {
+  .experience-section {
+    padding: 100px 5%;
+  }
+
+  .exp-card {
+    padding: 23px;
+    min-height: 310px;
+  }
+
+  .exp-left {
+    padding-right: 52%;
+  }
+
+  .exp-right {
+    padding-left: 52%;
+  }
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+  .experience-section {
+    padding: 90px 6% 70px;
+  }
+
+  .experience-header h2 {
+    font-size: 68px;
+  }
+
+  .experience-header > p {
+    font-size: 13px;
+  }
+
+  .exp-summary {
+    gap: 30px;
+    margin-bottom: 55px;
+    padding: 20px;
+  }
+
+  .exp-summary-number {
+    font-size: 30px;
+  }
+
+  .experience-timeline {
+    gap: 40px;
+  }
+
+  .exp-timeline-line {
+    left: 12px;
+  }
+
+  .exp-left,
+  .exp-right {
+    justify-content: flex-start;
+    padding-left: 42px;
+    padding-right: 0;
+  }
+
+  .exp-timeline-dot {
+    left: 12px;
+  }
+
+  .exp-card {
+    min-height: 270px;
+  }
+
+  .exp-footer {
+    margin-top: 70px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+  .experience-section {
+    padding: 80px 5% 55px;
+  }
+
+  .experience-header {
+    margin-bottom: 35px;
+  }
+
+  .exp-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .experience-header h2 {
+    font-size: 52px;
+    letter-spacing: -3px;
+  }
+
+  .experience-header > p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 18px;
+  }
+
+  .exp-summary {
+    width: 100%;
+    justify-content: space-around;
+    gap: 12px;
+    padding: 17px 10px;
+    margin-bottom: 45px;
+  }
+
+  .exp-summary-number {
+    font-size: 27px;
+  }
+
+  .exp-summary-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .exp-summary-divider {
+    height: 43px;
+  }
+
+  .experience-timeline {
+    gap: 30px;
+  }
+
+  .exp-timeline-line {
+    left: 9px;
+  }
+
+  .exp-left,
+  .exp-right {
+    padding-left: 32px;
+  }
+
+  .exp-timeline-dot {
+    left: 9px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .exp-card {
+    min-height: 260px;
+    padding: 19px;
+    border-radius: 16px;
+  }
+
+  .exp-card-number {
+    font-size: 11px;
+  }
+
+  .exp-status {
+    font-size: 7px;
+    padding: 8px;
+  }
+
+  .exp-card-content {
+    margin: 28px 0;
+  }
+
+  .exp-type {
+    font-size: 8px;
+  }
+
+  .exp-card-content h3 {
+    font-size: 25px;
+  }
+
+  .exp-card-content p {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .exp-card-bottom {
+    padding-top: 15px;
+  }
+
+  .exp-duration-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  .exp-duration strong {
+    font-size: 13px;
+  }
+
+  .exp-card-index {
+    font-size: 7px;
+  }
+
+  .exp-footer {
+    margin-top: 55px;
+    padding: 35px 5px;
+  }
+
+  .exp-footer h3 {
+    font-size: 26px;
+  }
+
+  .exp-footer p {
+    font-size: 11px;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 360px) {
+  .experience-header h2 {
+    font-size: 44px;
+  }
+
+  .exp-summary-label {
+    font-size: 7px;
+  }
+
+  .exp-card {
+    padding: 15px;
+  }
+
+  .exp-card-content h3 {
+    font-size: 21px;
+  }
+
+  .exp-card-index {
+    display: none;
+  }
+}
+
+/* =====================================
+   TOUCH DEVICES
+===================================== */
+
+@media (hover: none) {
+  .exp-card:hover {
+    transform: none;
+    background: rgba(255,255,255,.58);
+    border-color: rgba(255,255,255,.95);
+    box-shadow: 0 12px 35px rgba(0,0,0,.035);
+  }
+
+  .exp-card:hover .exp-card-content h3 {
+    color: #171717;
+  }
+
+  .exp-card:hover .exp-duration-icon {
+    background: #fce3e9;
+    color: #f02d50;
+    transform: none;
+  }
+}
+
+/* =====================================
+   ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .exp-timeline-dot span,
+  .exp-status span,
+  .exp-footer-icon {
+    animation: none;
+  }
+
+  .exp-card,
+  .exp-duration-icon {
+    transition: none;
+  }
+}

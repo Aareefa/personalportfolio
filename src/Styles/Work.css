@@ -1,0 +1,531 @@
+
+/* =====================================
+   WORK SECTION
+===================================== */
+
+.work-section {
+  position: relative;
+  width: 100%;
+  padding: 120px 7% 90px;
+  background: #e7e9ec;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.work-background-circle {
+  position: absolute;
+  top: 8%;
+  right: -180px;
+  width: 450px;
+  height: 450px;
+  border-radius: 50%;
+  background: rgba(240, 45, 80, 0.07);
+  filter: blur(100px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* =====================================
+   MAIN HEADING
+===================================== */
+
+.work-header {
+  max-width: 750px;
+  margin-bottom: 100px;
+}
+
+.work-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #555;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.work-eyebrow span {
+  width: 35px;
+  height: 2px;
+  background: #f02d50;
+}
+
+.work-header h2 {
+  font-size: clamp(55px, 8vw, 105px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -6px;
+  color: #171717;
+}
+
+.work-header h2 span {
+  color: #f02d50;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+.work-header > p {
+  max-width: 520px;
+  margin-top: 25px;
+  color: #656565;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   SECTION SUBHEADINGS
+===================================== */
+
+.work-section-title {
+  margin-bottom: 35px;
+}
+
+.work-section-title > span {
+  display: block;
+  color: #f02d50;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 14px;
+}
+
+.work-section-title h3 {
+  font-size: clamp(32px, 4vw, 48px);
+  color: #171717;
+  font-weight: 700;
+  letter-spacing: -2px;
+}
+
+.work-section-title h3 i {
+  color: #f02d50;
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+/* =====================================
+   PROJECTS SECTION
+===================================== */
+
+.projects-section {
+  width: 100%;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+/* =====================================
+   PROJECT CARD
+===================================== */
+
+.project-card {
+  min-height: 370px;
+  position: relative;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background: rgba(255,255,255,.48);
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 20px;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  box-shadow: 0 8px 30px rgba(0,0,0,.025);
+
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    background .45s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,.85);
+  border-color: rgba(240, 45, 80, 0.22);
+  box-shadow: 0 20px 45px rgba(0,0,0,.09);
+}
+
+/* CARD TOP */
+
+.project-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.project-number {
+  font-size: 14px;
+  font-weight: 700;
+  color: #f02d50;
+}
+
+.project-type {
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: #666;
+  border: 1px solid rgba(0,0,0,.12);
+  padding: 9px 13px;
+  border-radius: 50px;
+}
+
+/* CARD CONTENT */
+
+.project-content {
+  margin: 45px 0 35px;
+}
+
+.project-category {
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #f02d50;
+}
+
+.project-content h3 {
+  margin-top: 13px;
+  margin-bottom: 15px;
+  font-size: clamp(25px, 3vw, 36px);
+  letter-spacing: -1.5px;
+  color: #171717;
+  overflow-wrap: anywhere;
+  transition: color .3s ease;
+}
+
+.project-card:hover .project-content h3 {
+  color: #f02d50;
+}
+
+.project-content p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #626262;
+  max-width: 500px;
+}
+
+/* CARD BOTTOM */
+
+.project-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0,0,0,.10);
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.project-technologies span {
+  padding: 8px 11px;
+  border-radius: 50px;
+  background: #ececef;
+  color: #444;
+  font-size: 9px;
+  font-weight: 600;
+  transition: .3s ease;
+}
+
+.project-card:hover .project-technologies span {
+  background: #fce3e9;
+  color: #c91e40;
+}
+
+.project-arrow {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+  background: #171717;
+  color: white;
+
+  font-size: 20px;
+  transition: all .35s ease;
+}
+
+.project-card:hover .project-arrow {
+  background: #f02d50;
+  transform: rotate(45deg);
+}
+
+/* =====================================
+   FOOTER MESSAGE
+===================================== */
+
+.work-footer {
+  margin-top: 100px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(0,0,0,.13);
+  text-align: center;
+}
+
+.work-footer p {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #666;
+  line-height: 1.8;
+}
+
+.work-footer span {
+  color: #f02d50;
+}
+
+/* =====================================
+   LARGE DESKTOP
+===================================== */
+
+@media (min-width: 1440px) {
+  .work-section {
+    padding-left: 9%;
+    padding-right: 9%;
+  }
+
+  .project-card {
+    min-height: 400px;
+    padding: 38px;
+  }
+
+  .project-content p {
+    font-size: 14px;
+  }
+}
+
+/* =====================================
+   LAPTOP
+===================================== */
+
+@media (max-width: 1100px) {
+  .work-section {
+    padding: 100px 5%;
+  }
+
+  .work-header {
+    margin-bottom: 75px;
+  }
+
+  .project-card {
+    padding: 24px;
+    min-height: 390px;
+  }
+
+  .project-content h3 {
+    font-size: 28px;
+  }
+
+  .project-content p {
+    font-size: 12px;
+  }
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 900px) {
+  .work-section {
+    padding: 85px 5% 65px;
+  }
+
+  .work-header {
+    margin-bottom: 65px;
+  }
+
+  .work-header h2 {
+    font-size: 65px;
+  }
+
+  .work-header > p {
+    font-size: 13px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .project-card {
+    min-height: 320px;
+  }
+
+  .project-content {
+    margin: 35px 0;
+  }
+
+  .work-footer {
+    margin-top: 70px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+  .work-section {
+    padding: 75px 5% 55px;
+  }
+
+  .work-header {
+    margin-bottom: 55px;
+  }
+
+  .work-eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .work-header h2 {
+    font-size: 51px;
+    letter-spacing: -3px;
+  }
+
+  .work-header > p {
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 18px;
+  }
+
+  .work-section-title {
+    margin-bottom: 25px;
+  }
+
+  .work-section-title > span {
+    font-size: 9px;
+  }
+
+  .work-section-title h3 {
+    font-size: 32px;
+  }
+
+  .project-card {
+    min-height: 340px;
+    padding: 21px;
+    border-radius: 16px;
+  }
+
+  .project-type {
+    font-size: 8px;
+    padding: 8px 10px;
+  }
+
+  .project-content {
+    margin: 32px 0;
+  }
+
+  .project-content h3 {
+    font-size: 26px;
+  }
+
+  .project-content p {
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .project-technologies {
+    gap: 6px;
+  }
+
+  .project-technologies span {
+    font-size: 8px;
+    padding: 7px 9px;
+  }
+
+  .project-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 17px;
+  }
+
+  .work-footer {
+    margin-top: 55px;
+  }
+
+  .work-footer p {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+  }
+}
+
+/* =====================================
+   EXTRA SMALL MOBILE
+===================================== */
+
+@media (max-width: 360px) {
+  .work-header h2 {
+    font-size: 44px;
+  }
+
+  .work-section-title h3 {
+    font-size: 27px;
+  }
+
+  .project-card {
+    padding: 17px;
+  }
+
+  .project-content h3 {
+    font-size: 23px;
+  }
+
+  .project-content p {
+    font-size: 11px;
+  }
+
+  .project-bottom {
+    gap: 8px;
+  }
+}
+
+/* =====================================
+   TOUCH DEVICES
+===================================== */
+
+@media (hover: none) {
+  .project-card:hover {
+    transform: none;
+    background: rgba(255,255,255,.48);
+    border-color: rgba(255,255,255,.9);
+    box-shadow: 0 8px 30px rgba(0,0,0,.025);
+  }
+
+  .project-card:hover .project-content h3 {
+    color: #171717;
+  }
+
+  .project-card:hover .project-technologies span {
+    background: #ececef;
+    color: #444;
+  }
+
+  .project-card:hover .project-arrow {
+    background: #171717;
+    transform: none;
+  }
+}
+
+/* =====================================
+   REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .project-arrow {
+    transition: none;
+  }
+}
