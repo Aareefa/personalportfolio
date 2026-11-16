@@ -21,7 +21,7 @@ const contactDetails = [
     icon: "⌘",
     title: "GITHUB",
     value: "Explore my projects",
-    link: "https://github.com/your-username",
+    link: "https://github.com/Aareefa",
     label: "View GitHub",
   },
 ];
