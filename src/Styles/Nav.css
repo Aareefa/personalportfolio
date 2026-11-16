@@ -222,11 +222,18 @@
   .navbar {
     height: 96px;
     padding: 0 4%;
+    gap: 10px;
   }
 
+  /* menu joins the normal flow so the brand name never sits under it */
   .nav-menu {
-    gap: 18px;
-    padding: 12px 18px;
+    position: static;
+    left: auto;
+    right: auto;
+    width: auto;
+    margin: 0 0 0 auto;
+    gap: 16px;
+    padding: 11px 16px;
   }
 
   .nav-menu a {
@@ -234,7 +241,21 @@
   }
 
   .brand-info {
-    display: none;
+    display: block;
+    min-width: 0;
+  }
+
+  .brand-info h2 {
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    white-space: nowrap;
+  }
+
+  .brand-info span {
+    font-size: 7px;
+    letter-spacing: 1.4px;
+    margin-top: 3px;
+    white-space: nowrap;
   }
 
   .availability {
@@ -247,12 +268,26 @@
   .navbar {
     height: 84px;
     padding: 0 4.5%;
+    gap: 8px;
   }
 
   .brand-logo {
-    width: 36px;
-    height: 36px;
-    font-size: 19px;
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .nav-brand {
+    gap: 8px;
+  }
+
+  .brand-info h2 {
+    font-size: 11px;
+    letter-spacing: 1px;
+  }
+
+  .brand-info span {
+    display: none;
   }
 
   .nav-menu {
@@ -266,9 +301,7 @@
   }
 
   .availability {
-    padding: 11px;
-    font-size: 0;
-    gap: 0;
+    display: none;
   }
 
   .status-dot {
@@ -280,15 +313,24 @@
 @media (max-width: 480px) {
   .navbar {
     height: 76px;
+    gap: 7px;
   }
 
   .nav-menu {
-    gap: 8px;
+    gap: 10px;
     padding: 9px 12px;
   }
 
   .nav-menu a {
-    font-size: 9px;
+    font-size: 10px;
+  }
+
+  .brand-info h2 {
+    font-size: 10px;
+    letter-spacing: .6px;
+    line-height: 1.2;
+    white-space: normal;
+    max-width: 68px;
   }
 }
 
@@ -296,17 +338,28 @@
   .navbar {
     height: 70px;
     padding: 0 4%;
+    gap: 6px;
   }
 
   .brand-logo {
-    width: 32px;
-    height: 32px;
-    font-size: 17px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  .nav-brand {
+    gap: 6px;
+  }
+
+  .brand-info h2 {
+    font-size: 9px;
+    letter-spacing: .4px;
+    max-width: 62px;
   }
 
   .nav-menu {
-    gap: 9px;
-    padding: 9px 12px;
+    gap: 7px;
+    padding: 8px 9px;
   }
 
   .nav-menu a {
@@ -314,7 +367,12 @@
   }
 
   .availability {
-    padding: 9px;
+    padding: 8px;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
   }
 }
 
