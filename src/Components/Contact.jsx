@@ -6,8 +6,8 @@ const contactDetails = [
   {
     icon: "✉",
     title: "EMAIL ME",
-    value: "your-email@gmail.com",
-    link: "mailto:your-email@gmail.com",
+    value: "aareefashaik00@gmail.com",
+    link: "mailto:aareefashaik00@gmail.com?subject=Hello%20Aareefa",
     label: "Send an email",
   },
   {

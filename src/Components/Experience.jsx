@@ -1,29 +1,49 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import "../Styles/Experience.css";
 
 const experiences = [
   {
     id: "01",
     company: "Fulcrum GT",
+    role: "Intern",
     duration: "6 Months",
     type: "Professional Experience",
     description:
       "A professional experience milestone that contributed to my career journey, workplace exposure and continued professional growth.",
     status: "Experience Completed",
+    details: [
+      "Gained practical exposure to a professional development environment and software development workflows.",
+      "Applied technical knowledge and problem-solving skills while working on assigned tasks.",
+      "Collaborated with team members and developed communication and teamwork skills.",
+      "Strengthened technical understanding through continuous learning and hands-on experience.",
+    ],
   },
   {
     id: "02",
     company: "Kodewar Technologies",
+    role: "Frontend Developer Intern",
     duration: "3 Months",
     type: "Professional Experience",
     description:
       "An important step in my professional journey, adding to my experience and supporting my continued growth in the technology field.",
     status: "Going on",
+    details: [
+      "Developed responsive and user-friendly web interfaces using React.js, HTML5, CSS3, and JavaScript.",
+      "Created reusable React components to improve code organization and maintainability.",
+      "Implemented responsive UI layouts to provide consistent experiences across desktop, tablet, and mobile devices.",
+      "Worked on frontend development tasks and improved interface usability through structured layouts and styling.",
+    ],
   },
 ];
 
 export default function Experience() {
   const prefersReducedMotion = useReducedMotion();
+  const [openId, setOpenId] = useState(null);
+
+  const toggleDetails = (id) => {
+    setOpenId((current) => (current === id ? null : id));
+  };
 
   const reveal = (delay = 0, x = 0, y = 44) => ({
     initial: prefersReducedMotion ? false : { opacity: 0, x, y },
@@ -118,7 +138,10 @@ export default function Experience() {
             ></motion.span>
           </div>
 
-          {experiences.map((item, index) => (
+          {experiences.map((item, index) => {
+            const isOpen = openId === item.id;
+
+            return (
             <motion.div
               className={`exp-timeline-item ${
                 index % 2 === 0 ? "exp-left" : "exp-right"
@@ -145,7 +168,19 @@ export default function Experience() {
               </div>
 
               {/* EXPERIENCE CARD */}
-              <div className="exp-card">
+              <div
+                className={`exp-card ${isOpen ? "exp-card-open" : ""}`}
+                role="button"
+                tabIndex={0}
+                aria-expanded={isOpen}
+                onClick={() => toggleDetails(item.id)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    toggleDetails(item.id);
+                  }
+                }}
+              >
 
                 <div className="exp-card-top">
 
@@ -168,7 +203,47 @@ export default function Experience() {
 
                   <h3>{item.company}</h3>
 
+                  <span className="exp-role">{item.role}</span>
+
                   <p>{item.description}</p>
+
+                  <span className="exp-toggle">
+                    {isOpen ? "HIDE DETAILS" : "VIEW DETAILS"}
+                    <span
+                      className={`exp-toggle-icon ${
+                        isOpen ? "exp-toggle-icon-open" : ""
+                      }`}
+                    >
+                      +
+                    </span>
+                  </span>
+
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        className="exp-details"
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{
+                          duration: prefersReducedMotion ? 0 : 0.45,
+                          ease: "easeInOut",
+                        }}
+                      >
+                        <div className="exp-details-inner">
+                          <span className="exp-details-label">
+                            WHAT I DID
+                          </span>
+
+                          <ul>
+                            {item.details.map((detail) => (
+                              <li key={detail}>{detail}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
                 </div>
 
@@ -194,7 +269,8 @@ export default function Experience() {
               </div>
 
             </motion.div>
-          ))}
+            );
+          })}
 
         </div>
 
